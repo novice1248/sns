@@ -45,8 +45,6 @@ export const Login: React.FC = () => {
   //   grade: 2,
   // };
 
-  
-  // //ログインボタンが押された時
   // const onClickLogin = (name: string, password: string) => {
   //   if (name === dammyData.name) {
   //     if (password === dammyData.name) {

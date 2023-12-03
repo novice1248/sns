@@ -18,7 +18,7 @@ ReactDOM.render(
       <Route path="/sign-up" element={<SignUp />} />
       <Route path="/page1" element={<Page1 />} />
       <Route path="*" element={<Page404 />} />
-      <Route path="https://novice1248.github.io/sns/" element={<App />} />
+      <Route path="/sns/" element={<App />} />
     </Routes>
   </BrowserRouter>
   </React.StrictMode>,
