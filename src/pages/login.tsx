@@ -61,7 +61,7 @@ export const Login: React.FC = () => {
   //   setPassword(e.target.value);
 
   if (user) {
-    return <Navigate to={`/page1`} />;
+    return <Navigate to={`/sns/page1`} />;
   }
 
   return (

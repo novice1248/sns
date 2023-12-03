@@ -11,8 +11,8 @@ export default function App() {
           paddingBottom: "1rem",
         }}
       >
-        <Link to="/Login">Login</Link> |{" "}
-        <Link to="/SignUp">Sign up</Link>
+        <Link to="/sns/Login">Login</Link> |{" "}
+        <Link to="/sns/SignUp">Sign up</Link>
       </nav>
     </div>
   );

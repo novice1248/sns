@@ -14,9 +14,9 @@ ReactDOM.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/sign-up" element={<SignUp />} />
-      <Route path="/page1" element={<Page1 />} />
+      <Route path="/sns/login" element={<Login />} />
+      <Route path="/sns/sign-up" element={<SignUp />} />
+      <Route path="/sns/page1" element={<Page1 />} />
       <Route path="*" element={<Page404 />} />
       <Route path="/sns/" element={<App />} />
     </Routes>
