@@ -1,0 +1,50 @@
+.body{
+    background-image: url('../images/img.jpg');
+    background-size: cover; 
+    background-position: center; 
+    color: white; 
+    font-family: Arial, sans-serif; 
+    padding: 20px;
+    text-align: center;
+}
+
+.h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.clubContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.club{
+    width: 45%;
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #fff; 
+    border-radius: 8px; 
+    text-align: center;
+    transition: transform 0.3s ease-in-out; 
+}
+
+.club:hover {
+    transform: scale(1.05); 
+}
+
+.club img {
+    max-width: 100%;
+    border-radius: 5px; 
+}
+
+.clubName {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.clubDescription {
+    font-size: 0.9em;
+}
