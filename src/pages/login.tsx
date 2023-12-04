@@ -1,8 +1,14 @@
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 import { initializeApp } from "firebase/app";
-import { GoogleAuthProvider, User, getAuth, onAuthStateChanged, signInWithPopup } from "firebase/auth";
-// import { User } from "../types/User";
+import {
+  GoogleAuthProvider,
+  User,
+  getAuth,
+  onAuthStateChanged,
+  signInWithPopup,
+} from "firebase/auth";
+import classes from "../css modules/login.module.scss";
 //ログイン状態の管理にはコンテキストが必要
 //ログインページの内容
 const firebaseConfig = {
@@ -18,10 +24,8 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 
-
 export const Login: React.FC = () => {
-
-  const [user, setUser] = useState<User|null>(null);
+  const [user, setUser] = useState<User | null>(null);
 
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
@@ -31,59 +35,27 @@ export const Login: React.FC = () => {
 
   const signIn = () => {
     signInWithPopup(auth, provider)
-    .then((result) => {
-
-    })
-    .catch((err) => console.error(err));
+      .then((result) => {})
+      .catch((err) => console.error(err));
   };
-
-  // //ダミーデータ
-  // const dammyData: User = {
-  //   id: 30,
-  //   name: "taro",
-  //   password: "password",
-  //   grade: 2,
-  // };
-
-  // const onClickLogin = (name: string, password: string) => {
-  //   if (name === dammyData.name) {
-  //     if (password === dammyData.name) {
-        
-  //     }
-  //   }
-  // };
-  // const [name, setName] = useState<string>("");
-  // const [password, setPassword] = useState<string>("");
-
-  // const onChangeName = (e: ChangeEvent<HTMLInputElement>) =>
-  //   setName(e.target.value);
-  // const onChangePassword = (e: ChangeEvent<HTMLInputElement>) =>
-  //   setPassword(e.target.value);
 
   if (user) {
     return <Navigate to={`/sns/club-list`} />;
   }
 
   return (
-    <div>サークルの人に簡単に相談できるSNSへようこそ！
-      {/* <h1>Login page</h1>
-      <p>input your username</p>
-      <input
-        type="text"
-        value={name}
-        placeholder="username"
-        onChange={onChangeName}
-      />
-      <p>input your password</p>
-      <input
-        type="password"
-        value={password}
-        placeholder="password"
-        onChange={onChangePassword}
-      /> */}
-      <p>
-        <button onClick={() => signIn()}>Login</button>
-      </p>
-    </div>
+    <>
+      <body className={classes.body}>
+        <div>気になるサークルの人と簡単に交流できるSNSへようこそ！</div>
+        <div>
+          <a className={classes.btnEmergencyReal} onClick={() => signIn()}>
+            <span className={classes.btnEmergencyRealBottom}></span>
+            <span className={classes.btnEmergencyRealTop}>
+              <span>押す</span>
+            </span>
+          </a>
+        </div>
+      </body>
+    </>
   );
 };

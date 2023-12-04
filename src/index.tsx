@@ -20,7 +20,7 @@ ReactDOM.render(
       <Route path="/sns/club-list" element={<ClubList />} />
       <Route path="/sns/club-list/club1" element={<Club1 />} />
       <Route path="*" element={<Page404 />} />
-      <Route path="/sns/" element={<App />} />
+      <Route path="/sns/" element={<Login />} />
     </Routes>
   </BrowserRouter>
   </React.StrictMode>,

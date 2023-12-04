@@ -1,16 +1,34 @@
 import { Navigate } from "react-router-dom";
+import axios from "axios";
 import classes from "../css modules/club-list.module.scss"
 import club1 from "../images/club1.png";
 import club2 from "../images/club2.png";
 import club3 from "../images/club3.png";
 import club4 from "../images/club4.png";
 import club5 from "../images/club5.png";
-import img from "../images/img.jpg";
 
 export const ClubList = () => {
+  const url = "http://localhost:7000/";
   const onclick = () => {
-    return<Navigate to={`/sns/club-list/Club1`} />;
-  }
+    // window.location.href="https://127.0.0.1:7000/sns.html"
+    axios.post(url, {
+      user: "karaage",
+      circle: "kyoupuro",
+    })
+    .then(function (response) {
+      console.log(response.data);
+    })
+    // await fetch("http://localhost:7000/", {
+    //   method: "POST",
+    //   mode: "cors",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify({ name: "hoge", email: "ok@sample.com" }),
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => console.log(data));
+  };
   return (
     <>
       <meta charSet="UTF-8" />
@@ -21,7 +39,7 @@ export const ClubList = () => {
         <h1 className={classes.h1}>サークル一覧</h1>
         <h3>気になっているサークル一をクリックして、皆さんと話しましょう。</h3>
         <div className={classes.clubContainer}>
-          <div className={classes.club} onClick={() => onclick() }>
+          <div className={classes.club} onClick={onclick}>
             <img src={club1} alt="Club 1 Image" />
             <div className={classes.clubName}>競技プログラミング部</div>
             <div className={classes.clubDescription}>

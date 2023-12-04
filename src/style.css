@@ -1,0 +1,53 @@
+.img-container {
+  width: 100px; /* 画像の幅を設定 */
+  height: 100px; /* 画像の高さを設定 */
+  overflow: hidden; /* 画像の領域外の部分を非表示にする */
+  border-radius: 50%; /* border-radiusを50%に設定して円形にする */
+}
+
+.img-container img {
+  width: 100%; /* 画像を親要素の幅に合わせる */
+  height: 100%; /* 画像を親要素の高さに合わせる */
+  object-fit: cover; /* 画像を親要素に合わせて切り取る */
+}
+.scrollable-container {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  top: 10px;
+  left: 400px;
+  overflow: auto; /* スクロールバーが必要な時に表示するように設定 */
+  border: 1px solid #ccc; /* より見やすくするためにボーダーを追加 */
+  padding: 10px; /* コンテンツが端に寄らないように余白を追加 */
+}
+
+/* 独自のスクロールバースタイル */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+.clubbutton {
+  position: relative;
+  bottom: 470px;
+  left: 20px;
+}
+.vertical-line {
+  position: relative;
+  width: 2px; /* 線の幅 */
+  height: 100vh; /* 線の高さ（画面の高さいっぱいに） */
+  background-color: #f60505; /* 線の色 */
+  left: 300px;
+  bottom: 300px;
+}
